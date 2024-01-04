@@ -1,0 +1,21 @@
+#+TITLE: Configuration for all dotfiles
+
+* Content                                                               :toc:
+- [[#intro][Intro]]
+
+* Intro
+This is a configuration of dotfiles managed by GNU STOW, usually using:
+=stow dir= to create links to the specified =dir=.
+
+for example:
+#+begin_src shell
+stow git
+#+end_src
+to config =.gitconfig= to =~/.gitconfig=.
+
+
+Or using this script =install.sh= to create links to all =dir=:
+#+begin_src shell
+chmod +x install.sh
+./install.sh
+#+end_src
