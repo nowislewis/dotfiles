@@ -2,7 +2,7 @@ if status is-interactive
 
 end
 
-fish_config theme choose "Dracula"
+# fish_config theme choose "Dracula"
 # style
 starship init fish | source
 
@@ -13,6 +13,8 @@ if test (uname) = "Darwin"
    set -xg HOMEBREW_CORE_GIT_REMOTE "https://mirrors.ustc.edu.cn/homebrew-core.git"
    set -xg HOMEBREW_BOTTLE_DOMAIN "https://mirrors.ustc.edu.cn/homebrew-bottles"
    set -xg HOMEBREW_API_DOMAIN "https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+   set -xg HOMEBREW_API_DOMAIN "https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+   set -gx PATH $PATH /opt/homebrew/opt/openjdk/bin:$PATH
 end
 
 
