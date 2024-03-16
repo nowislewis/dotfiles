@@ -14,7 +14,7 @@ stow git
 to config =.gitconfig= to =~/.gitconfig=.
 
 
-Or using this script =install.sh= to create links to all =dir=:
+You can also use =make stow= or the script =install.sh= to create links to all =dir=:
 #+begin_src shell
 chmod +x install.sh
 ./install.sh
