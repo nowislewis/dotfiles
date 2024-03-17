@@ -12,6 +12,6 @@ maple-font:
 	wget -O $(HOME)/.fonts/maple.zip https://github.com/subframe7536/maple-font/releases/download/v6.4.1/MapleMono-SC-NF.zip
 
 yay-backup:
-	yay -Qe > packages-repository.txt
+	yay -Qqe > packages-repository.txt
 yay-install:
 	yay --needed -S - < packages-repository.txt
