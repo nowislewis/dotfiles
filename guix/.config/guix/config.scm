@@ -10,6 +10,7 @@
 ;; Indicate which modules to import to access the variables
 ;; used in this configuration.
 (use-modules (gnu) (nongnu packages linux))
+(use-modules (gnu packages shells))
 (use-service-modules cups desktop networking ssh xorg)
 
 (operating-system
@@ -25,6 +26,7 @@
                   (name "lewisliu")
                   (comment "Lewisliu")
                   (group "users")
+                  (shell (file-append zsh "/bin/zsh"))
                   (home-directory "/home/lewisliu")
                   (supplementary-groups '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))
@@ -39,7 +41,8 @@
   ;; services, run 'guix system search KEYWORD' in a terminal.
   (services
    (modify-services
-    (append (list (service gnome-desktop-service-type)
+    (append (list 
+	       ;;(service sway-desktop-service-type)
 		          ;; To configure OpenSSH, pass an 'openssh-configuration'
 		          ;; record as a second argument to 'service' below.
 		          (service openssh-service-type)

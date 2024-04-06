@@ -4,6 +4,7 @@ end
 
 # fish_config theme choose "Dracula"
 # style
+set -gx PATH $PATH /usr/local/bin
 starship init fish | source
 
 
@@ -17,6 +18,12 @@ if test (uname) = "Darwin"
    set -gx PATH $PATH /opt/homebrew/opt/openjdk/bin:$PATH
 end
 
+# guix
+if test (uname) = "Linux"
+	set fish_function_path $fish_function_path $HOME/.guix-profile/share/fish/functions
+    fenv 'GUIX_PROFILE="/home/lewisliu/.guix-profile"
+     . "$GUIX_PROFILE/etc/profile"'
+end
 
 set -gx PATH $PATH $HOME/.local/bin
 # gnu sort behavior

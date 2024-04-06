@@ -1,4 +1,5 @@
 # style
+export PATH=$PATH:"/usr/local/bin" # for manual installed starship
  eval "$(starship init zsh)"
  # completion
  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -23,7 +24,7 @@
      unset http_proxy https_proxy all_proxy
      echo -e "终端代理已关闭。"
  }
- proxy_on
+ # proxy_on
 
  alias emacs='emacsclient -c||emacs'
 
@@ -35,3 +36,8 @@
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+
+     GUIX_PROFILE="/home/lewisliu/.guix-profile"
+          . "$GUIX_PROFILE/etc/profile"
+fish
