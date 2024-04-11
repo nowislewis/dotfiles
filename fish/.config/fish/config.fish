@@ -29,7 +29,9 @@ set -gx PATH $PATH $HOME/.local/bin
 # gnu sort behavior
 set -gx LC_COLLATE POSIX
 
-pyenv init -| source
+if test (uname) = "Darwin"
+   pyenv init -| source
+end
 # proxy
 set -gx host_ip 127.0.0.1
 function proxy_on

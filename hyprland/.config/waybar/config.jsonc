@@ -2,7 +2,7 @@
   "layer": "top",
   "modules-left": ["custom/arch", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["network","bluetooth", "pulseaudio", "battery", "clock"],
   "hyprland/window": {
     "max-length": 50
   },
@@ -37,7 +37,7 @@
   "pulseaudio": {
     "format": "<span color='#b4befe'>{icon}</span> {volume}%",
     "format-muted": "",
-    "tooltip": false,
+    "tooltip": true,
     "format-icons": {
       "headphone": "",
       "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
@@ -51,5 +51,15 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
     "tooltip": false
-  }
+  },
+  "bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+ }
 }
