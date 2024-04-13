@@ -32,7 +32,7 @@
     },
     "memory": {
         "interval": 1,
-        "format": "\uf538 {used}G",
+        "format": "󰍛 {used}G",
         "tooltip": true,
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G"
     },
