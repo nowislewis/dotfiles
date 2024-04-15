@@ -28,7 +28,8 @@ alias grep='grep --color=auto'
 # style
 export PATH=$PATH:"$HOME/.local/bin"
 
-if [[$(uname) == "Darwin"]]; then
+if [[ $(uname) == "Darwin" ]]
+then
     export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
     export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
@@ -37,11 +38,16 @@ if [[$(uname) == "Darwin"]]; then
     export LC_COLLATE=POSIX
 fi
 
-
-if [[$(uname) == "Linux"]]; then
-    export PATH=$PATH:"/usr/local/bin" # for manual installed starship
+if [[ $(uname) == "Linux" ]]
+then
     GUIX_PROFILE="/home/lewisliu/.guix-profile"
-    . "$GUIX_PROFILE/etc/profile"
+    . "$GUIX_PROFILE/etc/profile";
+fi
+
+
+if [[ $(uname) == "Linux" ]]
+then
+    export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
 fi
 
 # host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")

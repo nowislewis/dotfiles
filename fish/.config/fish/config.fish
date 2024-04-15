@@ -23,3 +23,4 @@ function proxy_off
     set -e all_proxy
     echo -e "终端代理已关闭。"
 end
+
