@@ -15,3 +15,8 @@ yay-backup:
 	yay -Qqe > packages-repository.txt
 yay-install:
 	yay --needed -S - < packages-repository.txt
+
+install-fish:
+	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
+	~/Downloads/oh-my-fish/bin/install --offline
+	omf install foreign-env
