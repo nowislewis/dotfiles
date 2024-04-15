@@ -26,7 +26,7 @@
                   (name "lewisliu")
                   (comment "Lewisliu")
                   (group "users")
-                  (shell (file-append zsh "/bin/bash"))
+                  (shell (file-append zsh "/bin/zsh"))
                   (home-directory "/home/lewisliu")
                   (supplementary-groups '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))

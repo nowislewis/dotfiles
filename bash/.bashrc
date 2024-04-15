@@ -1,4 +1,3 @@
-#!/bin/bash
 # Bash initialization for interactive non-login shells and
 # for remote shells (info "(bash) Bash Startup Files").
 
@@ -18,7 +17,7 @@ then
 fi
 
 # Source the system-wide file.
-[ -f /etc/bashrc ] && source /etc/bashrc
+# [ -f /etc/bashrc ] && source /etc/bashrc
 
 alias ls='ls -p --color=auto'
 alias ll='ls -l'
