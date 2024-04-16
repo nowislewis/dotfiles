@@ -18,5 +18,6 @@ yay-install:
 
 install-fish:
 	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
-	~/Downloads/oh-my-fish/bin/install --offline
-	omf install foreign-env
+	~/Downloads/oh-my-fish/bin/install --offline --noninteractive
+	fish -c "omf install foreign-env"
+
