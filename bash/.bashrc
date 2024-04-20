@@ -24,6 +24,11 @@ alias ll='ls -l'
 alias grep='grep --color=auto'
 
 
+#  +------------+
+#  | Common Env |
+#  +------------+
+export VISUAL=vim
+export EDITOR=$VISUAL
 # style
 export PATH=$PATH:"$HOME/.local/bin"
 
@@ -41,16 +46,13 @@ if [[ $(uname) == "Linux" ]]
 then
     GUIX_PROFILE="/home/lewisliu/.guix-profile"
     . "$GUIX_PROFILE/etc/profile";
-fi
-
-
-if [[ $(uname) == "Linux" ]]
-then
     export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
 fi
 
+
 # host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
-host_ip=127.0.0.1
+export host_ip=127.0.0.1
+
 
 proxy_on() {
     export http_proxy="http://$host_ip:7890"
