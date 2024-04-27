@@ -11,6 +11,7 @@
 ;; used in this configuration.
 (use-modules (gnu) (nongnu packages linux))
 (use-modules (gnu packages shells))
+(use-modules (gnu packages vim))
 (use-service-modules cups desktop networking ssh xorg)
 
 (operating-system
@@ -34,7 +35,7 @@
   ;; Packages installed system-wide.  Users can also install packages
   ;; under their own account: use 'guix search KEYWORD' to search
   ;; for packages and 'guix install PACKAGE' to install a package.
-  (packages (append (list (specification->package "nss-certs"))
+  (packages (append (list vim)
                     %base-packages))
 
   ;; Below is the list of system services.  To search for available
@@ -53,7 +54,9 @@
     (guix-service-type config => (guix-configuration
                                   (inherit config)
                                   (substitute-urls
-                                   (list "https://mirror.sjtu.edu.cn/guix/" "https://ci.guix.gnu.org" "https://substitutes.nonguix.org"))
+                                   (append (list "https://mirror.sjtu.edu.cn/guix/" "https://ci.guix.gnu.org" "https://substitutes.nonguix.org")
+                                           %default-substitute-urls)
+                                           )
                                   (authorized-keys
                                    (append (list (plain-file "non-guix.pub"
   							     "(public-key

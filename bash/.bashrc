@@ -30,7 +30,7 @@ alias grep='grep --color=auto'
 export VISUAL=vim
 export EDITOR=$VISUAL
 # style
-export PATH=$PATH:"$HOME/.local/bin"
+#export PATH=$PATH:"$HOME/.local/bin"
 
 if [[ $(uname) == "Darwin" ]]
 then
