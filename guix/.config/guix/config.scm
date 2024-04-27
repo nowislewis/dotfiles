@@ -12,7 +12,7 @@
 (use-modules (gnu) (nongnu packages linux))
 (use-modules (gnu packages shells))
 (use-modules (gnu packages vim))
-(use-service-modules cups desktop networking ssh xorg)
+(use-service-modules cups desktop networking ssh xorg sddm)
 
 (operating-system
   (kernel linux)
@@ -42,39 +42,42 @@
   ;; services, run 'guix system search KEYWORD' in a terminal.
   (services
    (modify-services
-    (append (list 
-	       ;;(service sway-desktop-service-type)
-		          ;; To configure OpenSSH, pass an 'openssh-configuration'
-		          ;; record as a second argument to 'service' below.
-		          (service openssh-service-type)
-		          ;; (service bluetooth-service-type)
-		          (set-xorg-configuration
-		           (xorg-configuration (keyboard-layout keyboard-layout))))
-	        %desktop-services)
-    (guix-service-type config => (guix-configuration
-                                  (inherit config)
-                                  (substitute-urls
-                                   (append (list "https://mirror.sjtu.edu.cn/guix/" "https://ci.guix.gnu.org" "https://substitutes.nonguix.org")
-                                           %default-substitute-urls)
-                                           )
-                                  (authorized-keys
-                                   (append (list (plain-file "non-guix.pub"
-  							     "(public-key
+       (append (list
+		        ;; To configure OpenSSH, pass an 'openssh-configuration'
+		        ;; record as a second argument to 'service' below.
+		        (service openssh-service-type)
+		        ;; (set-xorg-configuration
+		        ;;  (xorg-configuration (keyboard-layout keyboard-layout)))
+                (service sddm-service-type)
+                )
+	           ;; %desktop-services
+               (modify-services %desktop-services
+                 (delete gdm-service-type))
+               )
+     (guix-service-type config => (guix-configuration
+                                   (inherit config)
+                                   (substitute-urls
+                                    (append (list "https://mirror.sjtu.edu.cn/guix/" "https://ci.guix.gnu.org" "https://substitutes.nonguix.org")
+                                            %default-substitute-urls)
+                                    )
+                                   (authorized-keys
+                                    (append (list (plain-file "non-guix.pub"
+  							                                  "(public-key
                                     (ecc
                                      (curve Ed25519)
                                      (q #C1FD53E5D4CE971933EC50C9F307AE2171A2D3B52C804642A7A35F84F3A4EA98#)
                                     )
                                   )"
-                                 )
-                                                 )
-                                 %default-authorized-guix-keys))))))
+                                                              )
+                                                  )
+                                            %default-authorized-guix-keys))))))
   (bootloader (bootloader-configuration
-                (bootloader grub-efi-bootloader)
-                (targets (list "/boot/efi"))
-                (keyboard-layout keyboard-layout)))
+               (bootloader grub-efi-bootloader)
+               (targets (list "/boot/efi"))
+               (keyboard-layout keyboard-layout)))
   (swap-devices (list (swap-space
-                        (target (uuid
-                                 "b284c6f3-10a2-44cb-88cc-0caa3f108084")))))
+                       (target (uuid
+                                "b284c6f3-10a2-44cb-88cc-0caa3f108084")))))
 
   ;; The list of file systems that get "mounted".  The unique
   ;; file system identifiers there ("UUIDs") can be obtained
