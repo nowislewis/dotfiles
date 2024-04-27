@@ -1,20 +1,32 @@
 {
     "layer": "top",
-    "position": "top", 
-    "height": 26, 
+    "position": "top",
+    "height": 26,
     "spacing": 6,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": [],
+    // "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/window"],
     "modules-right": ["tray", "network", "pulseaudio", "memory", "cpu", "clock"],
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    // "hyprland/workspaces": {
+    //     "format": "{name}",
+    //     "on-click": "activate",
+    //     "on-scroll-up": "hyprctl dispatch workspace e+1",
+    //     "on-scroll-down": "hyprctl dispatch workspace e-1"
+    // },
+    // "hyprland/window": {
+    //     "format": "\uf061 {initialTitle}",
+    //     "separate-outputs": true
+    // },
+    "sway/workspaces":{
+        "format":"{name}",
+        "icon":false,
     },
-    "hyprland/window": {
-        "format": "\uf061 {initialTitle}",
-        "separate-outputs": true
+    "sway/mode": {
+        "format": "{}"
+    },
+    "sway/window": {
+        "format": "{title}",
+        // "icon": true,
     },
     "tray": {
         "icon-size": 21,
@@ -58,69 +70,69 @@
         "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
     }
 }
-# {
-#   "layer": "top",
-#   "height": 40,
-#   "modules-left": ["custom/arch", "hyprland/window"],
-#   "modules-center": ["hyprland/workspaces"],
-#   "modules-right": ["network","bluetooth", "pulseaudio", "battery", "clock"],
-#   "hyprland/window": {
-#     "max-length": 50
-#   },
-#   "custom/arch": {
-#     "format": "  ",
-#     "tooltip": false,
-#   },
-#   "hyprland/workspaces": {
-#     "format": "{name}",
-#     "format": "{icon}",
-#     "format-icons": {
-#       "1": "",
-#       "2": "",
-#       "3": "",
-#       "4": "",
-#       "5": "",
-#       "active": "",
-#       "default": ""
-#     },
-#     "persistent-workspaces": {
-#       "*": 5, // 5 workspaces by default on every monitor
-#       "HDMI-A-1": 3 // but only three on HDMI-A-1
-#     }
-#   },
-#   "battery": {
-#     "format": "{capacity}% {icon}",
-#     "format-icons": ["", "", "", "", ""]
-#   },
-#   "clock": {
-#     "format-alt": "{:%a, %d. %b  %H:%M}"
-#   },
-#   "pulseaudio": {
-#     "format": "<span color='#b4befe'>{icon}</span> {volume}%",
-#     "format-muted": "",
-#     "tooltip": true,
-#     "format-icons": {
-#       "headphone": "",
-#       "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
-#     },
-#     "scroll-step": 1
-#   },
-#   "network": {
-#     // "interface": "wlo1",
-#     "format": "{ifname}",
-#     "format-wifi": "<span color='#b4befe'> </span>{essid}",
-#     "format-ethernet": "{ipaddr}/{cidr} ",
-#     "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
-#     "tooltip": false
-#   },
-#   "bluetooth": {
-# 	"format": " {status}",
-# 	"format-connected": " {device_alias}",
-# 	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-# 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-# 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-# 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-# 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-# 	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-#  }
-# }
+// {
+//   "layer": "top",
+//   "height": 40,
+//   "modules-left": ["custom/arch", "hyprland/window"],
+//   "modules-center": ["hyprland/workspaces"],
+//   "modules-right": ["network","bluetooth", "pulseaudio", "battery", "clock"],
+//   "hyprland/window": {
+//     "max-length": 50
+//   },
+//   "custom/arch": {
+//     "format": "  ",
+//     "tooltip": false,
+//   },
+//   "hyprland/workspaces": {
+//     "format": "{name}",
+//     "format": "{icon}",
+//     "format-icons": {
+//       "1": "",
+//       "2": "",
+//       "3": "",
+//       "4": "",
+//       "5": "",
+//       "active": "",
+//       "default": ""
+//     },
+//     "persistent-workspaces": {
+//       "*": 5, // 5 workspaces by default on every monitor
+//       "HDMI-A-1": 3 // but only three on HDMI-A-1
+//     }
+//   },
+//   "battery": {
+//     "format": "{capacity}% {icon}",
+//     "format-icons": ["", "", "", "", ""]
+//   },
+//   "clock": {
+//     "format-alt": "{:%a, %d. %b  %H:%M}"
+//   },
+//   "pulseaudio": {
+//     "format": "<span color='//b4befe'>{icon}</span> {volume}%",
+//     "format-muted": "",
+//     "tooltip": true,
+//     "format-icons": {
+//       "headphone": "",
+//       "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+//     },
+//     "scroll-step": 1
+//   },
+//   "network": {
+//     // "interface": "wlo1",
+//     "format": "{ifname}",
+//     "format-wifi": "<span color='//b4befe'> </span>{essid}",
+//     "format-ethernet": "{ipaddr}/{cidr} ",
+//     "format-disconnected": "<span color='//b4befe'>󰖪 </span>No Network",
+//     "tooltip": false
+//   },
+//   "bluetooth": {
+// 	"format": " {status}",
+// 	"format-connected": " {device_alias}",
+// 	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+// 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+// 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+// 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+// 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+// 	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+//  }
+// }
