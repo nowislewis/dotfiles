@@ -20,4 +20,8 @@ install-fish:
 	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
 	~/Downloads/oh-my-fish/bin/install --offline --noninteractive
 	fish -c "omf install foreign-env"
+	fish -c "omf install z"
 
+install-links:
+	ln -s ~/Documents/emacs/08-keys/.authinfo ~/.authinfo
+	ln -s ~/Documents/emacs/02-binary-files/12-wallpapers ~/Pictures

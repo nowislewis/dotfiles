@@ -24,12 +24,11 @@ window#waybar.hidden {
 	margin-top: 6px;
 	background: rgba(16, 20, 24, 0.5);
 	transition: none;
-
     font-size: 12px;
 }
 
 #workspaces button {
-    margin: 3px;
+    margin: 0 3px;
     border: none;
     padding: 0 8px;
     background: transparent;
@@ -43,6 +42,11 @@ window#waybar.hidden {
 #workspaces button.active {
     background: #fff9bb;
     color: #000000;
+}
+
+#workspaces button.focused {
+    background-color: rgba(30, 144, 255, 0.8); /* 蓝色高亮当前 workspace */
+    color: white; /* 字体颜色改为白色 */
 }
 
 #workspaces button.active:hover {
