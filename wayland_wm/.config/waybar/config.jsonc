@@ -49,15 +49,16 @@
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G"
     },
     "network": {
-        "interval": 1,
-        "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
-        "format-ethernet": "\uf6ff {ipaddr}/{cidr}",
-        "format-linked": "\uf059 No IP ({ifname})",
-        "format-disconnected": "\uf071 Disconnected",
-        "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
-        "format-alt": "\uf6ff {ifname}: {ipaddr}/{cidr}"
+        "format": " Disabled",
+        "format-wifi": "{bandwidthUpBits:>}{bandwidthDownBits:>}",
+        "tooltip-format-wifi": "{essid}",
+        "format-ethernet": "{bandwidthDownBits:>}{bandwidthUpBits:>}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": " Disconnected",
+        "on-click": "footclient -T waybar_nmtui -e nmtui",
+        "interval": 2,
     },
-    "pulseaudio": {
+   "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%",
         "format-muted": "\uf6a9",
