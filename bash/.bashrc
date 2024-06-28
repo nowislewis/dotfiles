@@ -30,7 +30,8 @@ alias grep='grep --color=auto'
 export VISUAL=vim
 export EDITOR=$VISUAL
 # style
-#export PATH=$PATH:"$HOME/.local/bin"
+# for d2
+export PATH=$PATH:"$HOME/.local/bin"
 
 if [[ $(uname) == "Darwin" ]]
 then
@@ -65,4 +66,6 @@ proxy_off() {
     echo -e "终端代理已关闭。"
 }
 
-alias emacs='emacsclient -c||emacs'
+# Create a new frame instead of trying to use the current Emacs frame
+# alias emacs='emacsclient -c||emacs'
+alias ec='emacsclient -c'

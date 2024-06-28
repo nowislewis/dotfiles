@@ -24,3 +24,6 @@ function proxy_off
     echo -e "终端代理已关闭。"
 end
 
+# Create a new frame instead of trying to use the current Emacs frame
+alias ec 'emacsclient -c'
+# alias emacs 'emacsclient -c; or emacs'
