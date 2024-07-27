@@ -235,4 +235,6 @@ default_border pixel 3
 # exec waybar
 # exec mihomo
 
+exec clash-verge
+
 include @sysconfdir@/sway/config.d/*

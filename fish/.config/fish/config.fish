@@ -7,9 +7,6 @@ fenv source ~/.bashrc
 # style
 starship init fish | source
 
-if test (uname) = "Darwin"
-   pyenv init -| source
-end
 
 function proxy_on
 	set -gx http_proxy "http://$host_ip:7890"
@@ -27,3 +24,9 @@ end
 # Create a new frame instead of trying to use the current Emacs frame
 alias ec 'emacsclient -c'
 # alias emacs 'emacsclient -c; or emacs'
+
+
+# pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
