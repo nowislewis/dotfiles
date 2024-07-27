@@ -233,6 +233,6 @@ default_border pixel 3
 # start programs
 
 # exec waybar
-exec mihomo
+# exec mihomo
 
 include @sysconfdir@/sway/config.d/*

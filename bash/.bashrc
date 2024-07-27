@@ -45,8 +45,9 @@ fi
 
 if [[ $(uname) == "Linux" ]]
 then
-    GUIX_PROFILE="/home/lewisliu/.guix-profile"
-    . "$GUIX_PROFILE/etc/profile";
+### guix
+#    GUIX_PROFILE="/home/lewisliu/.guix-profile"
+#    . "$GUIX_PROFILE/etc/profile";
     export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
 fi
 
@@ -69,3 +70,9 @@ proxy_off() {
 # Create a new frame instead of trying to use the current Emacs frame
 # alias emacs='emacsclient -c||emacs'
 alias ec='emacsclient -c'
+
+# start fish by default
+if [[ $(uname) == "Linux" ]]
+then
+    fish
+fi
