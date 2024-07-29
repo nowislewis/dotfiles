@@ -2,6 +2,9 @@
 
 * Content                                                               :toc:
 - [[#intro][Intro]]
+- [[#some-backup][Some backup]]
+  - [[#zotero][zotero]]
+  - [[#anki][anki]]
 
 * Intro
 This is a configuration of dotfiles managed by GNU STOW, usually using:
@@ -19,8 +22,10 @@ You can also use =make stow= or the script =install.sh= to create links to all =
 make stow
 #+end_src
 
-or
-#+begin_src shell
-chmod +x install.sh
-./install.sh
-#+end_src
+* Some backup
+** zotero
+jasminum: get chinese translator
+** anki
++ intall =qt6-wayland= in order to use on sway
++ anki-connect
++ anki-open-org-notes

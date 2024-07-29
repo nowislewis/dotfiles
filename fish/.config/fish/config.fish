@@ -27,6 +27,9 @@ alias ec 'emacsclient -c'
 
 
 # pyenv
+ 
+# if test (uname) = "Darwin"
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 pyenv init - | source
+# end
