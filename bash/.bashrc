@@ -41,6 +41,8 @@ then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     # gnu sort behavior
     export LC_COLLATE=POSIX
+        # anki
+    export PATH=$PATH:"/Applications/Anki.app/Contents/MacOS"
 fi
 
 if [[ $(uname) == "Linux" ]]
