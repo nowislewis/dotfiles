@@ -236,6 +236,9 @@ default_border pixel 3
 exec clash-verge
 
 # otherwise blueman-manager can't work well, and you should enable bluetooth in systemd or herd
-exec blueman-applet 
+exec blueman-applet
+
+# fcitx5
+exec fcitx5 -d --replace
 
 include @sysconfdir@/sway/config.d/*
