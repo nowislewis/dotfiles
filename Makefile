@@ -1,3 +1,6 @@
+# +------+
+# | stow |
+# +------+
 stow_dirs = $(wildcard */)
 .PYONY=stow
 .DEFAULT_GOAL := stow
@@ -15,14 +18,16 @@ emacs.d:
 rime:
 	git clone https://github.com/iDvel/rime-ice.git --depth=1 $(HOME)/Documents/rime
 emacs:
-	git clone git@github.com:nowislewis/emacs.git $(HOME)/Documents/emacs
+	git clone --recurse-submodules -j8 git@github.com:nowislewis/emacs.git $(HOME)/Documents/emacs
 maple-font:
-	wget -O $(HOME)/.fonts/maple.zip https://github.com/subframe7536/maple-font/releases/download/v6.4.1/MapleMono-SC-NF.zip
+	mkdir ~/.fonts/maple
+	wget -O $(HOME)/.fonts/maple/maple.zip https://github.com/subframe7536/maple-font/releases/download/v6.4.1/MapleMono-SC-NF.zip
 
-# +----------------------------+
-# | install with prerequisites |
-# +----------------------------+
+# +---------+
+# | install |
+# +---------+
 
+install: install-fish install-links
 install-fish:
 	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
 	~/Downloads/oh-my-fish/bin/install --offline --noninteractive
