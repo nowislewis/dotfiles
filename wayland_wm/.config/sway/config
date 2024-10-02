@@ -240,5 +240,7 @@ exec blueman-applet
 
 # fcitx5
 exec fcitx5 -d --replace
+# notify
+exec swaync
 
 include @sysconfdir@/sway/config.d/*

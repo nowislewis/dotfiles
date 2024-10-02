@@ -51,6 +51,7 @@ then
 #    GUIX_PROFILE="/home/lewisliu/.guix-profile"
 #    . "$GUIX_PROFILE/etc/profile";
     export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
+    export PATH=$PATH:"$HOME/go/bin"; # for go install
 fi
 
 
