@@ -32,10 +32,11 @@ export EDITOR=$VISUAL
 # style
 # for d2
 export PATH=$PATH:"$HOME/.local/bin"
+export PATH=$PATH:"$HOME/go/bin"; # for go install
 
 if [[ $(uname) == "Darwin" ]]
 then
-    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+    # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
     export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -51,7 +52,6 @@ then
 #    GUIX_PROFILE="/home/lewisliu/.guix-profile"
 #    . "$GUIX_PROFILE/etc/profile";
     export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
-    export PATH=$PATH:"$HOME/go/bin"; # for go install
 fi
 
 
@@ -72,7 +72,8 @@ proxy_off() {
 
 # Create a new frame instead of trying to use the current Emacs frame
 # alias emacs='emacsclient -c||emacs'
-alias ec='emacsclient -c'
+alias e='emacsclient -nc'
+alias en='emacsclient -nw'
 
 # start fish by default
 if [[ $(uname) == "Linux" ]]
