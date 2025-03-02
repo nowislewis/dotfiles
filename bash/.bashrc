@@ -72,7 +72,8 @@ proxy_off() {
 
 # Create a new frame instead of trying to use the current Emacs frame
 # alias emacs='emacsclient -c||emacs'
-alias ec='emacsclient -c'
+alias e='emacsclient -nc'
+alias en='emacsclient -nw'
 
 # start fish by default
 if [[ $(uname) == "Linux" ]]

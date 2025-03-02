@@ -22,7 +22,8 @@ function proxy_off
 end
 
 # Create a new frame instead of trying to use the current Emacs frame
-alias ec 'emacsclient -c'
+alias e 'emacsclient -nc'
+alias en 'emacsclient -nw'
 # alias emacs 'emacsclient -c; or emacs'
 
 

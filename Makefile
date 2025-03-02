@@ -36,7 +36,7 @@ install-fish:
 
 install-links:
 	ln -s ~/Documents/emacs/08-keys/.authinfo ~/.authinfo
-	ln -s ~/Documents/emacs/02-binary-files/12-wallpapers ~/Pictures
+	ln -s ~/Documents/emacs/02-binary-git/binary-files/12-wallpapers ~/Pictures
 
 # +--------+
 # | backup |

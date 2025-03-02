@@ -50,7 +50,7 @@
     },
     "network": {
         "format": " Disabled",
-        "format-wifi": "{bandwidthUpBytes:>}{bandwidthDownBytes:>}",
+        "format-wifi": " {bandwidthUpBytes:>}{bandwidthDownBytes:>}",
         "tooltip-format-wifi": "{essid}",
         "format-ethernet": "{bandwidthDownBits:>}{bandwidthUpBits:>}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
