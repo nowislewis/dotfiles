@@ -6,6 +6,8 @@ fenv source ~/.bashrc
 # fish_config theme choose "Dracula"
 # style
 starship init fish | source
+# zoxide
+zoxide init fish | source
 
 
 function proxy_on

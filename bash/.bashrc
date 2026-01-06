@@ -7,17 +7,9 @@ export SHELL
 
 if [[ $- != *i* ]]
 then
-    # We are being invoked from a non-interactive shell.  If this
-    # is an SSH session (as in "ssh host command"), source
-    # /etc/profile so we get PATH and other essential variables.
     [[ -n "$SSH_CLIENT" ]] && source /etc/profile
-
-    # Don't do anything else.
     return
 fi
-
-# Source the system-wide file.
-# [ -f /etc/bashrc ] && source /etc/bashrc
 
 alias ls='ls -p --color=auto'
 alias ll='ls -l'
@@ -54,11 +46,7 @@ then
     export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
 fi
 
-
-# host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
 export host_ip=127.0.0.1
-
-
 proxy_on() {
     export http_proxy="http://$host_ip:7890"
     export https_proxy="http://$host_ip:7890"
@@ -70,13 +58,7 @@ proxy_off() {
     echo -e "终端代理已关闭。"
 }
 
-# Create a new frame instead of trying to use the current Emacs frame
-# alias emacs='emacsclient -c||emacs'
 alias e='emacsclient -nc'
 alias en='emacsclient -nw'
+alias t='tmux attach||tmux'
 
-# start fish by default
-if [[ $(uname) == "Linux" ]]
-then
-    fish
-fi

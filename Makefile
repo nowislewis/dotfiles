@@ -27,12 +27,16 @@ maple-font:
 # | install |
 # +---------+
 
-install: install-fish install-links
+install: install-zsh install-links
+
+install-zsh:
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+
 install-fish:
 	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
 	~/Downloads/oh-my-fish/bin/install --offline --noninteractive
 	fish -c "omf install foreign-env"
-	fish -c "omf install z"
 
 install-links:
 	ln -s ~/Documents/emacs/08-keys/.authinfo ~/.authinfo
