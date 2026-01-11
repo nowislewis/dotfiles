@@ -1,4 +1,9 @@
 source ~/.bashrc
+bindkey -e
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
