@@ -17,32 +17,32 @@ install: emacs.d emacs rime maple-font zsh fish links
 # │ check │
 # └───────┘
 # this file will be used to check with parallel	in "install"
-all-checked: folder-checked ssh-checked
-	touch all-checked
+checked-all: checked-folder checked-ssh
+	touch checked-all
 
-folder-checked:
+checked-folder:
 	mkdir -p ${HOME}/Documents
 	mkdir -p ${HOME}/Downloads
-	touch folder-checked
+	touch checked-folder
 
-ssh-checked:
+checked-ssh:
 	@test -d "$(HOME)/.ssh" || (echo "Error: ~/.ssh directory not found" && exit 1)
-	touch ssh-checked
+	touch checked-ssh
 
 # ┌─────────┐
 # │ plugins │
 # └─────────┘
 
-emacs.d: all-checked
+emacs.d: checked-all
 	git clone git@github.com:nowislewis/nowisemacs.git $(HOME)/.emacs.d
 
-emacs:  all-checked
+emacs:  checked-all
 	git clone --recurse-submodules -j8 git@github.com:nowislewis/emacs.git $(HOME)/Documents/emacs
 
-rime:  all-checked
+rime:  checked-all
 	git clone https://github.com/iDvel/rime-ice.git --depth=1 $(HOME)/Documents/rime
 
-maple-font:  all-checked
+maple-font:  checked-all
 	rm -rf ${HOME}/.fonts/maple
 	mkdir -p ${HOME}/.fonts/maple
 	cd ${HOME}/.fonts/maple && \
@@ -55,7 +55,7 @@ zsh:
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 
-fish: folder-checked ssh-checked
+fish: checked-all
 	git clone https://github.com/oh-my-fish/oh-my-fish ~/Downloads/oh-my-fish --depth=1
 	~/Downloads/oh-my-fish/bin/install --offline --noninteractive
 	fish -c "omf install foreign-env"
