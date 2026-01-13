@@ -1,0 +1,12 @@
+{
+  "providers" : {
+    "deepseek" : {
+      "api" : "openai-chat",
+      "url" : "https://api.deepseek.com",
+      "models" : {
+        "deepseek-chat":{}
+      },
+      "key" : "${env:API_DEEPSEEK_COM_ANTHROPIC_KEY}"
+    }
+  }
+}

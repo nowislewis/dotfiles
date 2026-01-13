@@ -24,6 +24,7 @@ export EDITOR=$VISUAL
 # style
 # for d2
 export PATH=$PATH:"$HOME/.local/bin"
+export PATH=$PATH:"$HOME/my_soft/bin"
 export PATH=$PATH:"$HOME/go/bin"; # for go install
 
 if [[ $(uname) == "Darwin" ]]
@@ -32,18 +33,6 @@ then
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
     export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-    # gnu sort behavior
-    export LC_COLLATE=POSIX
-        # anki
-    export PATH=$PATH:"/Applications/Anki.app/Contents/MacOS"
-fi
-
-if [[ $(uname) == "Linux" ]]
-then
-### guix
-#    GUIX_PROFILE="/home/lewisliu/.guix-profile"
-#    . "$GUIX_PROFILE/etc/profile";
-    export PATH=$PATH:"/usr/local/bin"; # for manual installed starship
 fi
 
 export host_ip=127.0.0.1
@@ -62,3 +51,20 @@ alias e='emacsclient -nc'
 alias en='emacsclient -nw'
 alias t='tmux attach||tmux'
 
+
+setup_env_from_temp() {
+    local config_file=${HOME}/.authinfo
+
+    [ -f "$config_file" ] || return 0
+
+    while read -r line; do
+        domain=$(awk '{print $2}' <<< "$line" | sed 's/[.\/-]/_/g')
+        password=$(awk '{print $NF}' <<< "$line")
+        
+        # 忽略以数字开头的域名
+        [[ "$domain" =~ ^[0-9] ]] && continue
+        
+        export "$(tr '[:lower:]' '[:upper:]' <<< "$domain")_KEY"="$password"
+    done < "$config_file"
+}
+setup_env_from_temp
