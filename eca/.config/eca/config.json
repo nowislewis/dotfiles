@@ -7,6 +7,17 @@
         "deepseek-chat":{}
       },
       "key" : "${env:API_DEEPSEEK_COM_ANTHROPIC_KEY}"
+    },
+    "litellm" : {
+      "api" : "openai-chat",
+      "url" : "https://llm-gateway.momenta.works",
+      "models" : {
+        "gpt-5.2":{},
+        "claude-sonnet-4.5":{},
+        "claude-haiku-4.5":{},
+        "minimax-m2.4":{}
+      },
+      "key" : "${env:LLM_GATEWAY_MOMENTA_WORKS_KEY}"
     }
   }
 }
