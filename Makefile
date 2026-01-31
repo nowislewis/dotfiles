@@ -62,7 +62,7 @@ fish: checked-all
 
 links: emacs
 	ln -s ~/Documents/emacs/08-keys/.authinfo ~/.authinfo
-	ln -s ~/Documents/emacs/02-binary-git/binary-files/12-wallpapers ~/Pictures
+	ln -s ~/Documents/emacs/30-saved-binary/01-pictures/02-wallpapers ~/Pictures
 
 # +--------+
 # | backup |

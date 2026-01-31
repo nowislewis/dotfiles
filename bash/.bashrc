@@ -51,6 +51,11 @@ alias e='emacsclient -nc'
 alias en='emacsclient -nw'
 alias t='tmux attach||tmux'
 
+if [ -d "/gnu/store" ]; then
+    GUIX_PROFILE="/home/lewisliu/.guix-profile"
+    . "$GUIX_PROFILE/etc/profile"
+    unset GUIX_PROFILE
+fi
 
 setup_env_from_temp() {
     local config_file=${HOME}/.authinfo
