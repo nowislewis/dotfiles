@@ -9,7 +9,10 @@
 
 ;; Indicate which modules to import to access the variables
 ;; used in this configuration.
-(use-modules (gnu) (nongnu packages linux))
+(use-modules (gnu)
+             (nongnu packages linux)
+             (gnu packages shells)
+             )
 (use-service-modules cups desktop networking ssh xorg)
 
 (operating-system
@@ -22,17 +25,18 @@
 
   ;; The list of user accounts ('root' is implicit).
   (users (cons* (user-account
-                  (name "lewisliu")
-                  (comment "Lewisliu")
-                  (group "users")
-                  (home-directory "/home/lewisliu")
-                  (supplementary-groups '("wheel" "netdev" "audio" "video")))
+                 (name "lewisliu")
+                 (comment "Lewisliu")
+                 (group "users")
+                 (home-directory "/home/lewisliu")
+                 (shell (file-append zsh "/bin/zsh"))
+                 (supplementary-groups '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))
 
   ;; Packages installed system-wide.  Users can also install packages
   ;; under their own account: use 'guix search KEYWORD' to search
   ;; for packages and 'guix install PACKAGE' to install a package.
-  (packages %base-packages)
+  (packages (cons zsh %base-packages)) ; 或放在 profile 里也行
 
   ;; Below is the list of system services.  To search for available
   ;; services, run 'guix system search KEYWORD' in a terminal.

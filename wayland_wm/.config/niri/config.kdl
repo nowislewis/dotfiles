@@ -111,6 +111,7 @@ output "HDMI-A-1" {
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
+prefer-no-csd
 layout {
     // Set gaps around windows in logical pixels.
     gaps 1
@@ -272,6 +273,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "sh" "-c" "swaybg -i \"$HOME/Pictures/wallhaven-g8kq5l_3840x2160.png\" -m fill"
+spawn-at-startup "mihomo"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -291,7 +293,6 @@ hotkey-overlay {
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
 
