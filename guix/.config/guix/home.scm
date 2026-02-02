@@ -11,7 +11,9 @@
        '("foot" "niri" "waybar" "swaybg" "fuzzel" "font-google-noto-serif-cjk" "xdg-utils"
          "tree" "curl" "gcc-toolchain" "starship"
          "zoxide" "fzf" "git" "zsh" "stow" "make" "zip" "unzip"
-         "ripgrep" "fd" "vim")))
+         "ripgrep" "fd" "vim"
+         "ffmpeg" "cmake"
+         )))
  (services
   (append
    (list
