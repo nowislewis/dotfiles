@@ -27,6 +27,9 @@ export PATH=$PATH:"$HOME/.local/bin"
 export PATH=$PATH:"$HOME/my_soft/bin"
 export PATH=$PATH:"$HOME/go/bin"; # for go install
 
+# mkdir -p ~/.npm-global
+# npm config set prefix '~/.npm-global'
+export PATH=$PATH:"$HOME/.npm-global/bin"
 if [[ $(uname) == "Darwin" ]]
 then
     # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
