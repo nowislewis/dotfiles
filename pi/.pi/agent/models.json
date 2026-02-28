@@ -1,0 +1,21 @@
+{
+    "providers": {
+        "litellm": {
+            "baseUrl": "https://llm-gateway.momenta.works",
+            "api": "openai-completions",
+            "apiKey": "!echo $LLM_GATEWAY_MOMENTA_WORKS_KEY",
+            "models": [
+                {
+                    "id": "claude-sonnet-4.6",
+                    "contextWindow": 1024000,
+                    "maxTokens": 32000
+                },
+                {
+                    "id": "gemini-3.1-pro",
+                    "contextWindow": 1024000,
+                    "maxTokens": 32000
+                }
+            ]
+        }
+    }
+}

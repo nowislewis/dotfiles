@@ -1,0 +1,10 @@
+{
+    "lastChangelogVersion": "0.55.3",
+    "defaultProvider": "litellm",
+    "defaultModel": "claude-sonnet-4.6",
+    "skills": [
+        "~/.claude/skills",
+        "~/Documents/emacs/14-skills"
+    ]
+
+}
