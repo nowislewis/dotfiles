@@ -1,0 +1,2 @@
+font-family = "Maple Mono NF CN"
+shell-integration-features = ssh-terminfo,ssh-env
