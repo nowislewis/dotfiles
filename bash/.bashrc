@@ -36,6 +36,7 @@ then
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
     export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+    export PATH="/Users/liuyi/Downloads/emacs/nextstep/Emacs.app/Contents/MacOS:$PATH"
 fi
 
 export host_ip=127.0.0.1
