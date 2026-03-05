@@ -69,11 +69,15 @@ setup_env_from_temp() {
     while read -r line; do
         domain=$(awk '{print $2}' <<< "$line" | sed 's/[.\/-]/_/g')
         password=$(awk '{print $NF}' <<< "$line")
-        
+
         # 忽略以数字开头的域名
         [[ "$domain" =~ ^[0-9] ]] && continue
-        
+
         export "$(tr '[:lower:]' '[:upper:]' <<< "$domain")_KEY"="$password"
     done < "$config_file"
 }
 setup_env_from_temp
+
+if [[ $- == *i* ]] && [[ -z "$ZSH_VERSION" ]] && command -v zsh &>/dev/null; then
+    exec zsh
+fi
